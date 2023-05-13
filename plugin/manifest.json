@@ -1,0 +1,39 @@
+{
+  "manifest_version": 2,
+  "name": "AifyFX",
+  "version": "1.8",
+  "description": "A Firefox plugin to rewrite text based on user-selected actions using OpenAI's API.",
+  "author": "Ali Raheem",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "aify@shoryuken.me",
+      "strict_min_version": "78.0"
+    }
+  },
+  "icons": {
+    "64": "/images/icon-64px.png",
+    "32": "/images/icon-32px.png",
+    "16": "/images/icon-16px.png"
+  },
+  "permissions": ["tabs", "activeTab", "storage"],
+  "options_ui": {
+    "page": "/html/settings.html",
+    "open_in_tab": true
+  },
+  "browser_action": {
+    "default_title": "Aify",
+    "default_icon": "/images/icon-64px.png",
+    "default_popup": "/html/actions.html"
+  },
+  "background": {
+    "scripts": ["/background.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["/content_scripts/compose.js"],
+      "run_at": "document_end"
+    }
+  ]
+
+}
