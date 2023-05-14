@@ -19,7 +19,6 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         }
         nameInput.onclick = function () {
-            console.log("click")
             getHighlightedText().then((response) => {
                 let highlightedText = response.highlightedText;
                 if (highlightedText) {
