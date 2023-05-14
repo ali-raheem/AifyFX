@@ -6,9 +6,6 @@ You must have API key for OpenAI (anyone can access GPT-3.5-turbo). But then you
 
 Aify comes with plenty of stock prompts, which you can add to, delete or customize as you need.
 
-## Screenshots
-
-
 ## Configuration and Usage
 
 ### Configuration
