@@ -4,6 +4,6 @@ function getSelectedText() {
 
 browser.runtime.onMessage.addListener((request, sender, sendResponse) => {
   if (request.command === "getSelectedText") {
-      sendResponse({highlightedText: getSelectedText()});
+      sendResponse(getSelectedText());
   }
 });

@@ -2,10 +2,10 @@
 <html>
   <head>
     <title>Aify Settings</title>
-    <link rel="stylesheet" type="text/css" media="screen" href="settings.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="styles.css">
   </head>
   <body>
-    <div class="container">
+    <div class="container" id="notes-container">
       <div class="row">
 	<div class="col-25">
 	  Configuration
@@ -26,7 +26,8 @@
 	</div>
 	<div class="col-75">
 	  <ol>
-	    <li>Highlight some text in the active window.</li>
+	    <li>Open a new compose window (Write, Reply or Forward).</li>
+	    <li>Highlight some text to act one.</li>
 	    <li>Click the Aify icon in the top right (near the lightbulb) and pick an action.</li>
 	    <li>A popup will open and await the response from the API. This may take time at periods of high load.</li>
 	    <li>(Optional) click <i>Regenerate</i> to get a new response.</li>
@@ -43,6 +44,7 @@
         <div class="col-25"> <label for="model">Model</label> </div>
         <div class="col-75">
           <select id="model">
+	    <!-- <option>gpt-3.5-turbo</option> -->
 	  </select>
         </div>
       </div>
@@ -65,7 +67,8 @@
 	<div class="col-25"></div>
 	<div class="col-75">
 	  <button id="get-models" value="Update Model List" class="button neutral">Update Models (need API key)</button>
-          <button value="Save" id="save-settings" class="button good">Save</button>
+    <button id="default-settings" value="Clear Settings" class="button bad">Clear Settings</button>
+    <button value="Save" id="save-settings" class="button good">Save</button>
 	</div>
       </div>
       <div class="row">
@@ -76,10 +79,9 @@
 	<div class="col-25"> </div>
 	<div class="col-75">
           <button id="add-action" value="Add Prompt" class="button neutral">Add Prompt</button>
-          <button id="default-settings" value="Clear Settings" class="button bad">Clear Settings</button>
 	</div>
       </div>
-      <script src="settings.js"></script>
+      <script type="module" src="settings.js"></script>
     </div>
   </body>
 </html>
