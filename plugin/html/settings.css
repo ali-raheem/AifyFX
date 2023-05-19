@@ -7,11 +7,11 @@ textarea {
     height: 100px;
 }
 input[type="text"],
-input[type="password"],
 select,
 textarea {
     width: 100%;
     padding: 12px;
+//    margin-top: 6px
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
@@ -21,15 +21,10 @@ label {
     padding: 12px 12px 12px 0;
     display: inline-block;
 }
-.flat {
-    background-color: #fff;
-    color: #000;
-    cursor: pointer;
-    text-decoration: none;
-}
 .button {
     color: #fff;
     padding: 12px 20px;
+    border: none;
     border-radius: 4px;
     cursor: pointer;
 }
@@ -58,32 +53,10 @@ label {
     display: table;
     clear: both;
 }
-.rotate {
-    width: 64px;
-    animation: rotation 4s infinite linear;
-}
-@keyframes rotation {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(719deg);
-    }
-  }
 @media screen and (max-width: 600px) {
     .col-25,
     .col-75 {
         width: 100%;
         margin-top: 0;
     }
-}
-.draft-page {
-    justify-content: space-between;
-    flex-direction: column;
-    height: 100vh;
-    display: flex;
-  }
-.draft-page .btns {
-    justify-content: flex-end;
-    display: flex;
 }
