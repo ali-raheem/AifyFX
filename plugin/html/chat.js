@@ -11,10 +11,11 @@ document.addEventListener('DOMContentLoaded', async function () {
   loadingIcon.src = '/images/loading.png';
   loadingIcon.classList.add('rotate');
 
-    var storage = await browser.storage.local.get({messages: [{role: "system",
-							       content: chatPrompt}]});
-    let messages = storage.messages;
-    console.log(messages);
+    var storage = await browser.storage.local.get(["messages"]);
+    let messages = storage?.messages;
+    if (!Array.isArray(messages) || messages.length === 0) {
+	messages = [{role: "system", prompt: chatPrompt}];
+    }
 
   messages.forEach(function(message) {
     displayMessage(message.role, message.content);
