@@ -11,8 +11,9 @@ document.addEventListener('DOMContentLoaded', async function () {
   loadingIcon.src = '/images/loading.png';
   loadingIcon.classList.add('rotate');
 
-  var storage = await browser.storage.local.get(["messages"]);
-  var messages = storage.messages || [{role: "system", content: chatPrompt}];  
+    var storage = await browser.storage.local.get(["messages"]);
+    let messages = (storage.messages?.length)? storage.messages : [{role: "system",
+								    content: chatPrompt}];
 
   messages.forEach(function(message) {
     displayMessage(message.role, message.content);
