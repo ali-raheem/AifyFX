@@ -11,9 +11,10 @@ document.addEventListener('DOMContentLoaded', async function () {
   loadingIcon.src = '/images/loading.png';
   loadingIcon.classList.add('rotate');
 
-    var storage = await browser.storage.local.get(["messages"]);
-    let messages = (storage.messages?.length)? storage.messages : [{role: "system",
-								    content: chatPrompt}];
+    var storage = await browser.storage.local.get({messages: [{role: "system",
+							       content: chatPrompt}]});
+    let messages = storage.messages;
+    console.log(messages);
 
   messages.forEach(function(message) {
     displayMessage(message.role, message.content);
@@ -69,6 +70,6 @@ document.addEventListener('DOMContentLoaded', async function () {
 });
 
 window.addEventListener('unload', async function (event) {
-    await browser.storage.local.set({ messages: "[]", draftTitle: "" });
+    await browser.storage.local.set({ messages: "", draftTitle: "" });
 });
   
